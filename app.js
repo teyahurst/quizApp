@@ -90,7 +90,7 @@ function generateStartQuiz(){
 
 function generateQuestionAndScore(){
   return `<ul class ="question-and-score">
-            <li class="questionNumber">Question Number: ${store.questionNumber + 1}/${store.questions.length}</li>
+            <li class="questionNumber">Question Number: ${store.questionNumber + 1}/${store.questions.length}</li><br>
             <li class="score">Score: ${store.score}/${store.questions.length}</li>
           </ul>`
 }
@@ -123,15 +123,10 @@ function generateAnswer(){
     possibleAnswers.forEach(answer => {
         answers += `
                       <input type="radio" onclick="handleRadioClick()" name="answers" id="answer${i + 1}" value="${answer}">
-                      <label for="answer${i + 1}" required> ${answer}</label><br>`;
-
-            
+                      <label for="answer${i + 1}" required> ${answer}</label><br>`; 
                     
     })
-   
-
     return answers;
-
 }
 
 //This will generate the results screen 
@@ -155,6 +150,8 @@ function generateResults(){
               </form>
           </div>`
 }
+
+// This generates feedback on if the user got the question right or wrong 
 
 function generateFeedback(answerStatus){
   let correctAnswer = store.questions[store.questionNumber].correctAnswer;
@@ -219,6 +216,9 @@ function handleNextQuestion(){
     })
 }
 
+//This function will handle the onclick of the submit button and generate feedback based on if the answer was right or wrong
+
+
 function handleQuestionSubmit(){
     $('body').on('submit', '#question-form', event => {
         event.preventDefault();
@@ -247,6 +247,8 @@ function handleQuestionSubmit(){
     })
 }
 
+//This function will set the page back to the start so users can retake quiz
+
 function retakeQuiz(){
     store.quizStarted = false;
     store.questionNumber = 0; 
@@ -254,12 +256,15 @@ function retakeQuiz(){
 
 }
 
+//This function handles the onclick of the try again button
+
 function handleRetakeQuiz(){
     $('body').on('click', '#restart', event => {
         retakeQuiz();
         render();
     })
 }
+
 
 function handleQuiz(){
   render();

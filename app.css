@@ -45,27 +45,16 @@ h1{
 
 /* styling for the question and score element */
 
-.question-and-score{
+ul{
   list-style: none;
-  font-size: 30px;
+  font-size: 3em;
   color:  rgb(49, 49, 49);
   padding: 3%;
-  font-weight: 700
-}
-
-.questionNumber {
-  display: inline-block;
-  text-align: left;
-  
+  font-weight: 700;
+  text-align: center;
   
 }
 
-.score {
-  display: inline;
-  text-align: right;
-  margin-left: 25%;
- 
-}
 
 /* styling for the questions*/
 
