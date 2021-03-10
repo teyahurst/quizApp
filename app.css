@@ -7,18 +7,133 @@
   *
 */
 
-h1, h2 {
-  text-align: center;
+/* imported fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
 
+
+html {
+  background-image: url(./images/paper-background.jpg);
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: 400;
+  font-size: 14px
 }
 
-.page-1, .page-2, .page-3 {
+h1{
   text-align: center;
-  border: 3px solid grey;
-  margin:2%;
+  font-size: 5em;
+  font-weight: 900;
+  color: rgb(49, 49, 49);
+}
+
+/* styling for the start screen */
+
+.start-quiz {
+  text-align: center;
+  font-size: 4em;
+  color:  rgb(49, 49, 49);
+  font-weight: 700;
+}
+
+/*start button styling */
+
+#start, #restart {
+  border: 3px solid  rgb(49, 49, 49);
+  border-radius: 1.5em;
+  color:rgb(68, 67, 67);
+  font-weight: 400;
+}
+
+/* styling for the question and score element */
+
+.question-and-score{
+  list-style: none;
+  font-size: 30px;
+  color:  rgb(49, 49, 49);
+  padding: 3%;
+  font-weight: 700
+}
+
+.questionNumber {
+  display: inline-block;
+  text-align: left;
+  
   
 }
 
-p {
+.score {
+  display: inline;
+  text-align: right;
+  margin-left: 25%;
+ 
+}
+
+/* styling for the questions*/
+
+.question{
+  text-align: center;
+  font-size: 3em;
+  font-weight: 900;
+  margin-bottom: 5%;
+}
+
+/* styling for the answers radio buttons*/
+label{
+  font-size: 3em;
+  font-weight: 700;
+  vertical-align: middle;
+
+}
+
+input[type="radio"]{
+  
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+
+}
+
+fieldset{
+  border: 3px solid black;
+  border-radius: 2em;
   text-align: center;
 }
+
+/* styling the submit and next question buttons */
+.submit-hidden, .hidden {
+  border: 3px solid rgb(49, 49, 49);
+  border-radius: 1.5em;
+  color:rgb(68, 67, 67);
+  font-weight: 400;
+  height: 4em;
+  width: 7em;
+  font-weight: 700;
+}
+
+/*styling the feedback for whether the answer was right or wrong*/
+.feedback{
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 5%;
+  border: 3px dotted black;
+}
+
+/*styling the final page and the retake quiz button */
+.results{
+  font-size: 4em;
+  font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

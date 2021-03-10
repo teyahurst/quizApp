@@ -82,7 +82,7 @@
 function generateStartQuiz(){
     return `<div class="start-quiz">
               <p>This quiz will test your knowledge of Harry Potter</p>
-              <button type="button" id="start">Click Here To Start!</button>
+              <button type="button" id="start">Start Quiz!</button>
            </div>`;
 }
 
@@ -99,7 +99,7 @@ function generateQuestionAndScore(){
 
 function generateQuestion(){
     let questionNumber = store.questions[store.questionNumber];
-    return `<form id="question-form" class="question">
+    return `<form id="question-form" class="question-form">
               <fieldset>
                   <div class="question">
                       <p>${questionNumber.question}</p>
@@ -107,7 +107,7 @@ function generateQuestion(){
                   <div class="answer">
                       ${generateAnswer()}
                   </div>
-                  <button class="submit hidden" type="submit" id="submit-Answer" required>Submit</button>
+                  <button class="submit-hidden" type="submit" id="submit-Answer" required>Submit</button>
                   <button class="hidden" type="button" id="next-Question">Next >>></button>
               </fieldset>
             </form>`
@@ -124,8 +124,12 @@ function generateAnswer(){
         answers += `
                       <input type="radio" onclick="handleRadioClick()" name="answers" id="answer${i + 1}" value="${answer}">
                       <label for="answer${i + 1}" required> ${answer}</label><br>`;
+
+            
                     
     })
+   
+
     return answers;
 
 }
@@ -138,12 +142,13 @@ function generateResults(){
                   <fieldset>
                       <div class ="row">
                           <div class="col-12">
+                              <p>You've finished the quiz!</p>
                               <p>Your score is: ${store.score}/${store.questions.length}</p>
                           </div>
                       </div>
                       
                       <div class="col-12">
-                          <button type="button" id="restart">Retake Quiz</button>
+                          <button type="button" id="restart">Try Again!</button>
                       </div>
 
                   </fieldset>
@@ -156,9 +161,9 @@ function generateFeedback(answerStatus){
   let html = '';
 
   if(answerStatus === 'correct'){
-      html= `<div>That is correct!</div>`
+      html= `<div class="feedback">That is correct!</div>`
   } else if(answerStatus === 'incorrect'){
-      html =`<div>That is incorrect. The correct answer is ${correctAnswer}.</div>`
+      html =`<div class="feedback">That is incorrect. The correct answer is ${correctAnswer}.</div>`
   }
   return html;
 }
